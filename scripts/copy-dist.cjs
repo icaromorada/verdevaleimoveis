@@ -5,8 +5,9 @@ const srcDir = path.join(__dirname, '..', 'dist', 'client');
 const destDir = path.join(__dirname, '..', 'dist');
 
 if (!fs.existsSync(srcDir)) {
-  console.error(`Source directory not found: ${srcDir}`);
-  process.exit(1);
+  // Nothing to copy — build may already have produced files directly in dist/
+  console.log(`Source directory not found: ${srcDir} — skipping copy`);
+  process.exit(0);
 }
 
 function copyRecursive(src, dest) {

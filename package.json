@@ -36,7 +36,7 @@
   },
   "scripts": {
   "build": "tsc -b && vite build",
-  "postbuild": "node scripts/copy-dist.js",
+  "postbuild": "node scripts/copy-dist.cjs",
     "cf-typegen": "wrangler types",
     "check": "tsc && vite build && wrangler deploy --dry-run",
     "dev": "vite",

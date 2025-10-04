@@ -26,3 +26,8 @@ function copyRecursive(src, dest) {
 
 copyRecursive(srcDir, destDir);
 console.log('Copied dist/client to dist/');
+
+// Also copy to top-level 'client' directory (some Vercel project settings expect this)
+const topClient = path.join(__dirname, '..', 'client');
+copyRecursive(srcDir, topClient);
+console.log('Also copied dist/client to client/');
